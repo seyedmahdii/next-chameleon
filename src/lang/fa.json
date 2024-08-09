@@ -1,0 +1,35 @@
+{
+	"header.dark-theme": "تیره",
+	"header.light-theme": "روشن",
+
+	"sidebar.dashboard": "داشبورد",
+	"sidebar.status": "وضعیت",
+	"sidebar.status.system-information": "اطلاعات سیستم",
+	"sidebar.status.Allocated-CPU-and-RAM": "CPU و RAM اختصاص داده شده",
+	"sidebar.status.administrators": "مدیران",
+	"sidebar.status.cpu": "CPU",
+	"sidebar.status.memory": "حافظه",
+	"sidebar.status.sessions": "نشست ها",
+
+	"sidebar.network": "شبکه",
+	"sidebar.network.interface": "رابط (Interface)",
+	"sidebar.network.dns": "DNS",
+	"sidebar.network.packet-capture": "Packet Capture",
+	"sidebar.network.static-route": "مسیر استاتیک",
+	"sidebar.network.policy-route": "سیاست مسیر",
+
+	"sidebar.system": "سیستم",
+	"sidebar.system.administrators": "مدیران",
+	"sidebar.system.admin-profile": "پروفایل مدیر",
+	"sidebar.system.frimware": "Frimware",
+	"sidebar.system.settings": "تنظیمات",
+	"sidebar.system.HA": "HA",
+	"sidebar.system.SNMP": "SNMP",
+	"sidebar.system.feature-visibility": "نمایان بودن ویژگی ها",
+
+	"loading.text": "لطفا صبر کنید. در حال لود...",
+
+	"login.header": "هدر لاگین",
+	"login.footer": "فوتر لاگین",
+	"login.content": "محتوای لاگین"
+}

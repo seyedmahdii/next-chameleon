@@ -1,20 +1,24 @@
+import { getBrightness, getContrastColor } from "@/utils/cssGlobalVariables";
 import Link from "next/link";
 
 const Hero = () => {
+	console.log(getBrightness("#4A6CF7"));
+	console.log(getContrastColor("#4A6CF7"));
+
 	return (
 		<>
 			<section
 				id="home"
-				className="dark:bg-gray-dark relative z-10 overflow-hidden bg-white pb-16 pt-[120px] md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
+				className="relative z-10 overflow-hidden bg-[--hero-background-color] pb-16 pt-[120px] md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
 			>
 				<div className="container">
 					<div className="-mx-4 flex flex-wrap">
 						<div className="w-full px-4">
 							<div className="wow fadeInUp mx-auto max-w-[800px] text-center" data-wow-delay=".2s">
-								<h1 className="mb-5 text-3xl font-bold leading-tight text-black dark:text-white sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
+								<h1 className="mb-5 text-3xl font-bold leading-tight text-[--title-color] sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
 									multi theme system
 								</h1>
-								<p className="dark:text-body-color-dark mb-12 text-base !leading-relaxed text-body-color sm:text-lg md:text-xl">
+								<p className="mb-12 text-base !leading-relaxed text-[--body-color] sm:text-lg md:text-xl">
 									Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia placeat cumque
 									aspernatur nemo eaque excepturi, perspiciatis possimus ipsa voluptas ab?
 								</p>
@@ -87,8 +91,8 @@ const Hero = () => {
 								y2="288"
 								gradientUnits="userSpaceOnUse"
 							>
-								<stop stopColor="#4A6CF7" />
-								<stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
+								<stop stopColor="var(--hero-svg-circle-primary-color)" />
+								<stop offset="1" stopColor="var(--hero-svg-circle-primary-color)" stopOpacity="0" />
 							</linearGradient>
 							<radialGradient
 								id="paint1_radial_25:217"
@@ -98,8 +102,16 @@ const Hero = () => {
 								gradientUnits="userSpaceOnUse"
 								gradientTransform="translate(17.9997 182) rotate(90) scale(18)"
 							>
-								<stop offset="0.145833" stopColor="#4A6CF7" stopOpacity="0" />
-								<stop offset="1" stopColor="#4A6CF7" stopOpacity="0.08" />
+								<stop
+									offset="0.145833"
+									stopColor="var(--hero-svg-circle-secondary-color)"
+									stopOpacity="0"
+								/>
+								<stop
+									offset="1"
+									stopColor="var(--hero-svg-circle-secondary-color)"
+									stopOpacity="0.08"
+								/>
 							</radialGradient>
 							<radialGradient
 								id="paint2_radial_25:217"
@@ -109,8 +121,16 @@ const Hero = () => {
 								gradientUnits="userSpaceOnUse"
 								gradientTransform="translate(76.9997 288) rotate(90) scale(34)"
 							>
-								<stop offset="0.145833" stopColor="#4A6CF7" stopOpacity="0" />
-								<stop offset="1" stopColor="#4A6CF7" stopOpacity="0.08" />
+								<stop
+									offset="0.145833"
+									stopColor="var(--hero-svg-circle-secondary-color)"
+									stopOpacity="0"
+								/>
+								<stop
+									offset="1"
+									stopColor="var(--hero-svg-circle-secondary-color)"
+									stopOpacity="0.08"
+								/>
 							</radialGradient>
 							<linearGradient
 								id="paint3_linear_25:217"
@@ -120,8 +140,8 @@ const Hero = () => {
 								y2="351.421"
 								gradientUnits="userSpaceOnUse"
 							>
-								<stop stopColor="#4A6CF7" />
-								<stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
+								<stop stopColor="var(--hero-svg-circle-primary-color)" />
+								<stop offset="1" stopColor="var(--hero-svg-circle-primary-color)" stopOpacity="0" />
 							</linearGradient>
 							<linearGradient
 								id="paint4_linear_25:217"
@@ -131,8 +151,12 @@ const Hero = () => {
 								y2="448.882"
 								gradientUnits="userSpaceOnUse"
 							>
-								<stop stopColor="#4A6CF7" />
-								<stop offset="1" stopColor="white" stopOpacity="0" />
+								<stop stopColor="var(--hero-svg-circle-primary-color)" />
+								<stop
+									offset="1"
+									stopColor="var(--hero-svg-circle-tertiary-color)"
+									stopOpacity="0"
+								/>
 							</linearGradient>
 							<linearGradient
 								id="paint5_linear_25:217"
@@ -142,8 +166,12 @@ const Hero = () => {
 								y2="470"
 								gradientUnits="userSpaceOnUse"
 							>
-								<stop stopColor="#4A6CF7" />
-								<stop offset="1" stopColor="white" stopOpacity="0" />
+								<stop stopColor="var(--hero-svg-circle-primary-color)" />
+								<stop
+									offset="1"
+									stopColor="var(--hero-svg-circle-tertiary-color)"
+									stopOpacity="0"
+								/>
 							</linearGradient>
 							<linearGradient
 								id="paint6_linear_25:217"
@@ -153,8 +181,8 @@ const Hero = () => {
 								y2="338.63"
 								gradientUnits="userSpaceOnUse"
 							>
-								<stop stopColor="#4A6CF7" />
-								<stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
+								<stop stopColor="var(--hero-svg-circle-primary-color)" />
+								<stop offset="1" stopColor="var(--hero-svg-circle-primary-color)" stopOpacity="0" />
 							</linearGradient>
 						</defs>
 					</svg>
@@ -201,8 +229,8 @@ const Hero = () => {
 								y2="212.24"
 								gradientUnits="userSpaceOnUse"
 							>
-								<stop stopColor="#4A6CF7" stopOpacity="0" />
-								<stop offset="1" stopColor="#4A6CF7" />
+								<stop stopColor="var(--hero-svg-circle-primary-color)" stopOpacity="0" />
+								<stop offset="1" stopColor="var(--hero-svg-circle-primary-color)" />
 							</linearGradient>
 							<linearGradient
 								id="paint1_linear_25:218"
@@ -212,8 +240,8 @@ const Hero = () => {
 								y2="212.24"
 								gradientUnits="userSpaceOnUse"
 							>
-								<stop stopColor="#4A6CF7" stopOpacity="0" />
-								<stop offset="1" stopColor="#4A6CF7" />
+								<stop stopColor="var(--hero-svg-circle-primary-color)" stopOpacity="0" />
+								<stop offset="1" stopColor="var(--hero-svg-circle-primary-color)" />
 							</linearGradient>
 							<linearGradient
 								id="paint2_linear_25:218"
@@ -223,8 +251,8 @@ const Hero = () => {
 								y2="212.24"
 								gradientUnits="userSpaceOnUse"
 							>
-								<stop stopColor="#4A6CF7" stopOpacity="0" />
-								<stop offset="1" stopColor="#4A6CF7" />
+								<stop stopColor="var(--hero-svg-circle-primary-color)" stopOpacity="0" />
+								<stop offset="1" stopColor="var(--hero-svg-circle-primary-color)" />
 							</linearGradient>
 							<linearGradient
 								id="paint3_linear_25:218"
@@ -234,8 +262,8 @@ const Hero = () => {
 								y2="210.214"
 								gradientUnits="userSpaceOnUse"
 							>
-								<stop stopColor="#4A6CF7" stopOpacity="0" />
-								<stop offset="1" stopColor="#4A6CF7" />
+								<stop stopColor="var(--hero-svg-circle-primary-color)" stopOpacity="0" />
+								<stop offset="1" stopColor="var(--hero-svg-circle-primary-color)" />
 							</linearGradient>
 							<linearGradient
 								id="paint4_linear_25:218"
@@ -245,8 +273,8 @@ const Hero = () => {
 								y2="99.5816"
 								gradientUnits="userSpaceOnUse"
 							>
-								<stop stopColor="#4A6CF7" />
-								<stop offset="1" stopColor="#4A6CF7" stopOpacity="0" />
+								<stop stopColor="var(--hero-svg-circle-primary-color)" />
+								<stop offset="1" stopColor="var(--hero-svg-circle-primary-color)" stopOpacity="0" />
 							</linearGradient>
 							<radialGradient
 								id="paint5_radial_25:218"
@@ -256,8 +284,16 @@ const Hero = () => {
 								gradientUnits="userSpaceOnUse"
 								gradientTransform="translate(220 63) rotate(90) scale(43)"
 							>
-								<stop offset="0.145833" stopColor="white" stopOpacity="0" />
-								<stop offset="1" stopColor="white" stopOpacity="0.08" />
+								<stop
+									offset="0.145833"
+									stopColor="var(--hero-svg-circle-tertiary-color)"
+									stopOpacity="0"
+								/>
+								<stop
+									offset="1"
+									stopColor="var(--hero-svg-circle-tertiary-color)"
+									stopOpacity="0.08"
+								/>
 							</radialGradient>
 						</defs>
 					</svg>

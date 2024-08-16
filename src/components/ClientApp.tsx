@@ -30,17 +30,17 @@ export default function ClientApp(props: { children: ReactNode }) {
 		document.head.appendChild(styleElement);
 	});
 
-	useEffect(() => {
-		import(`@/lang/${lang}.json`).then((messages) => {
-			setMessages(messages);
-		});
+	// useEffect(() => {
+	// 	import(`@/lang/${lang}.json`).then((messages) => {
+	// 		setMessages(messages);
+	// 	});
 
-		// Direction of widgets
-		const gridLayoutContainer = document.querySelector(".react-grid-layout");
-		const children = document.querySelectorAll(".react-grid-item");
-		gridLayoutContainer?.setAttribute("dir", "ltr");
-		children.forEach((child) => child.setAttribute("dir", dir));
-	}, [lang, dir]);
+	// 	// Direction of widgets
+	// 	const gridLayoutContainer = document.querySelector(".react-grid-layout");
+	// 	const children = document.querySelectorAll(".react-grid-item");
+	// 	gridLayoutContainer?.setAttribute("dir", "ltr");
+	// 	children.forEach((child) => child.setAttribute("dir", dir));
+	// }, [lang, dir]);
 
 	return (
 		<DirectionProvider dir={dir}>

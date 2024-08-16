@@ -1,10 +1,6 @@
-import { getBrightness, getContrastColor } from "@/utils/cssGlobalVariables";
 import Link from "next/link";
 
 const Hero = () => {
-	console.log(getBrightness("#4A6CF7"));
-	console.log(getContrastColor("#4A6CF7"));
-
 	return (
 		<>
 			<section

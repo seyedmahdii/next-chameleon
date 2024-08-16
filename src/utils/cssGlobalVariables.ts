@@ -18,6 +18,20 @@ export type CssTextGlobalHexColors = {
 	"body-color": string;
 };
 
+export type CssNavbarGlobalHexColors = {
+	"navbar-background-color-sticky": string;
+	"navbar-shadow-color-sticky": string;
+	"navbar-heading-color": string;
+	"navbar-item-text-color": string;
+	"navbar-item-text-hover-color": string;
+	"navbar-item-text-active-color": string;
+	"navbar-dropdown_menu-background-color": string;
+	// "navbar-dropdown_menu_item-text-color": string;
+	"navbar-dropdown_menu_item-background-hover-color": string;
+
+	// "navbar-dropdown_menu-border-color": string;
+};
+
 export type CssHeroGlobalHexColors = {
 	"hero-background-color": string;
 	"hero-svg-circle-primary-color": string;
@@ -27,6 +41,7 @@ export type CssHeroGlobalHexColors = {
 
 export type ComputedCssGlobalColors = CssBodyGlobalHexColors &
 	CssTextGlobalHexColors &
+	CssNavbarGlobalHexColors &
 	CssHeroGlobalHexColors;
 
 export function getComputedCssGlobalColors(
@@ -47,6 +62,11 @@ export function getComputedCssGlobalColors(
 			variables["hero-background-color"] ?? getBrightness(primaryColor) > 110
 				? adjustColorBrightness(secondaryColor, 38)
 				: adjustColorBrightness(secondaryColor, -25),
+
+		"navbar-background-color-sticky":
+			variables["navbar-background-color-sticky"] ?? getBrightness(primaryColor) > 110
+				? adjustColorBrightness(secondaryColor, 40)
+				: adjustColorBrightness(secondaryColor, -40),
 	}).merge((obj) => ({
 		"body-color":
 			variables["body-color"] ?? getContrastColor(obj["title-color"]) === "#000000"
@@ -58,6 +78,40 @@ export function getComputedCssGlobalColors(
 		"hero-svg-circle-secondary-color":
 			variables["hero-svg-circle-secondary-color"] ?? secondaryColor,
 		"hero-svg-circle-tertiary-color": primaryColor,
+
+		// CssNavbarGlobalHexColors
+		"navbar-shadow-color-sticky":
+			variables["navbar-shadow-color-sticky"] ??
+			getContrastColor(obj["navbar-background-color-sticky"]) === "#000000"
+				? "rgba(0, 0, 0, 0.1)"
+				: "rgba(255, 255, 255, 0.1)",
+		"navbar-heading-color":
+			variables["navbar-heading-color"] ??
+			getContrastColor(obj["navbar-background-color-sticky"]) === "#000000"
+				? adjustColorBrightness(primaryColor, -60)
+				: adjustColorBrightness(primaryColor, 60),
+		"navbar-item-text-color":
+			variables["navbar-item-text-color"] ??
+			getContrastColor(obj["navbar-background-color-sticky"]) === "#000000"
+				? "#1D2430"
+				: "#FFFFFF",
+		"navbar-item-text-active-color":
+			variables["navbar-item-text-active-color"] ??
+			getContrastColor(obj["navbar-background-color-sticky"]) === "#000000"
+				? primaryColor
+				: "#FFFFFF",
+		"navbar-item-text-hover-color":
+			variables["navbar-item-text-hover-color"] ??
+			getContrastColor(obj["navbar-background-color-sticky"]) === "#000000"
+				? primaryColor
+				: "#FFFFFF",
+		"navbar-dropdown_menu-background-color":
+			variables["navbar-dropdown_menu-background-color"] ?? obj["navbar-background-color-sticky"],
+		"navbar-dropdown_menu_item-background-hover-color":
+			variables["navbar-dropdown_menu_item-background-hover-color"] ??
+			getBrightness(primaryColor) > 110
+				? adjustColorBrightness(secondaryColor, 32)
+				: adjustColorBrightness(primaryColor, -32),
 	})).value;
 }
 

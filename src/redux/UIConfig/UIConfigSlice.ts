@@ -14,8 +14,8 @@ export const themes: Record<Themes, Partial<ComputedCssGlobalColors> & CssTailwi
 			"secondary-color": "#b1c1ff",
 		},
 		dark: {
-			"primary-color": "#FF0000",
-			"secondary-color": "#323232",
+			"primary-color": "#082ec4",
+			"secondary-color": "#031149",
 		},
 	};
 

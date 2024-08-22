@@ -56,14 +56,14 @@ export function getComputedCssGlobalColors(
 	return new TypedMergeable({
 		"body-background-color":
 			variables["body-background-color"] ?? getBrightness(primaryColor) > 110
-				? adjustColorBrightness(secondaryColor, 40)
+				? adjustColorBrightness(secondaryColor, 45)
 				: adjustColorBrightness(secondaryColor, -35),
 		"title-color":
 			variables["title-color"] ?? getBrightness(primaryColor) > 110 ? "#121723" : "#FFFFFF",
 
 		"hero-background-color":
 			variables["hero-background-color"] ?? getBrightness(primaryColor) > 110
-				? adjustColorBrightness(secondaryColor, 38)
+				? adjustColorBrightness(secondaryColor, 80)
 				: adjustColorBrightness(secondaryColor, -25),
 
 		"navbar-background-color-sticky":
@@ -74,7 +74,7 @@ export function getComputedCssGlobalColors(
 		"footer-background-color":
 			variables["footer-background-color"] ?? getBrightness(primaryColor) > 110
 				? adjustColorBrightness(secondaryColor, 38)
-				: adjustColorBrightness(secondaryColor, -25),
+				: adjustColorBrightness(secondaryColor, -38),
 	}).merge((obj) => ({
 		"body-color":
 			variables["body-color"] ?? getContrastColor(obj["title-color"]) === "#000000"

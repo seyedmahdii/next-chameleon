@@ -5,7 +5,7 @@ import {
 	getComputedCssGlobalColors,
 } from "../../utils/cssGlobalVariables";
 
-export type Themes = "light" | "dark";
+export type Themes = "light" | "dark" | "gold";
 
 export const themes: Record<Themes, Partial<ComputedCssGlobalColors> & CssTailwindGlobalHexColors> =
 	{
@@ -16,6 +16,10 @@ export const themes: Record<Themes, Partial<ComputedCssGlobalColors> & CssTailwi
 		dark: {
 			"primary-color": "#082ec4",
 			"secondary-color": "#031149",
+		},
+		gold: {
+			"primary-color": "#e6ac00",
+			"secondary-color": "#fff2cc",
 		},
 	};
 
@@ -32,8 +36,8 @@ const initialTheme = "light";
 
 const computedGlobalVariables = getComputedCssGlobalColors(themes[initialTheme]);
 const initialState: UIConfigState = {
-	dir: "ltr",
-	lang: "en",
+	dir: "rtl",
+	lang: "fa",
 	theme: initialTheme,
 	themeComputedVariables: {
 		"primary-color": themes[initialTheme]["primary-color"],

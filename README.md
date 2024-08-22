@@ -26,8 +26,8 @@ localhost:3000
 
 ## فایل‌های مهم
 
-1. **/src/utils/cssGlobalVariables.ts**
-   تمام متغییرهای css در این فایل تعریف می شوند. لیست متغییرها بسته به نیاز هر پروژه متفاوت است. میتواند برای هر قسمت از سایت متغییرها را به صورت زیر تعریف کنید:
+۱. **فایل /src/utils/cssGlobalVariables.ts**
+تمام متغییرهای css در این فایل تعریف می شوند. لیست متغییرها بسته به نیاز هر پروژه متفاوت است. میتواند برای هر قسمت از سایت متغییرها را به صورت زیر تعریف کنید:
 
 ```typescript
 export type CssNavbarGlobalHexColors = {
@@ -90,8 +90,8 @@ export type ComputedCssGlobalColors = CssBodyGlobalHexColors &
 <body className="bg-[--body-background-color]"></body>
 ```
 
-2. **/src/redux/UIConfig/UIConfigSlice.ts**
-   در این فایل کانفیگ کلی مربوط به UI سایت تعریف شده است. در متغییر `themes` تم های موجود را تعریف کرده ایم. در حال حاضر ۴ تم تعریف شده است. شما میتوانید بسته به نیاز پروژه خود این را تعریف کنید:
+۲. **فایل /src/redux/UIConfig/UIConfigSlice.ts**
+در این فایل کانفیگ کلی مربوط به UI سایت تعریف شده است. در متغییر `themes` تم های موجود را تعریف کرده ایم. در حال حاضر ۴ تم تعریف شده است. شما میتوانید بسته به نیاز پروژه خود این را تعریف کنید:
 
 ```typescript
 export type Themes = "light" | "dark" | "gold" | "cherryRed";
@@ -119,3 +119,10 @@ export const themes: Record<Themes, Partial<ComputedCssGlobalColors> & CssTailwi
 ```
 
 دقت کنید که کلیدهای `primary-color` و `secondary-color` اجباری هستند. همانطور که میبینید برای تم رنگی `cherryRed` علاوه بر این دو رنگ، رنگ ۲ متغییر دیگر نیز تهیه شده است.
+
+۳. **فایل /src/utils/changeTheme.ts**
+در این فایل تابع `changeTheme` تعریف شده است. شما نیازی به تغییر این فایل ندارید. صرفا هرجایی که نیاز داشتید تم را تغییر دهید این تابع را صدا بزنید:
+
+```typescript
+changeTheme("cherryRed");
+```

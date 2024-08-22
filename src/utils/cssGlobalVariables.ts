@@ -37,12 +37,15 @@ export type CssHeroGlobalHexColors = {
 	"hero-svg-circle-tertiary-color": string;
 };
 
+export type CssFooterGlobalHexColors = {
+	"footer-background-color": string;
+};
+
 export type ComputedCssGlobalColors = CssBodyGlobalHexColors &
 	CssTextGlobalHexColors &
 	CssNavbarGlobalHexColors &
-	CssHeroGlobalHexColors;
-// &
-// CssFooterGlobalHexColors;
+	CssHeroGlobalHexColors &
+	CssFooterGlobalHexColors;
 
 export function getComputedCssGlobalColors(
 	variables: CssTailwindGlobalHexColors & Partial<ComputedCssGlobalColors>
@@ -67,6 +70,11 @@ export function getComputedCssGlobalColors(
 			variables["navbar-background-color-sticky"] ?? getBrightness(primaryColor) > 110
 				? adjustColorBrightness(secondaryColor, 40)
 				: adjustColorBrightness(secondaryColor, -40),
+
+		"footer-background-color":
+			variables["footer-background-color"] ?? getBrightness(primaryColor) > 110
+				? adjustColorBrightness(secondaryColor, 38)
+				: adjustColorBrightness(secondaryColor, -25),
 	}).merge((obj) => ({
 		"body-color":
 			variables["body-color"] ?? getContrastColor(obj["title-color"]) === "#000000"

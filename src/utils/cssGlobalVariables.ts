@@ -134,7 +134,7 @@ export function getComputedCssGlobalColors(
 
 export type ButtonVariant = "contained" | "outlined" | "text";
 
-export function mapPropetiesToCss(
+export function mapPropertiesToCss(
 	tailwindColors: CssTailwindGlobalHexColors,
 	colors: CssBodyGlobalHexColors
 ) {

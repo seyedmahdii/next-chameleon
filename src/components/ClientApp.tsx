@@ -4,7 +4,7 @@ import { ReactNode, useInsertionEffect } from "react";
 import {
 	CssTailwindGlobalHexColors,
 	getComputedCssGlobalColors,
-	mapPropetiesToCss,
+	mapPropertiesToCss,
 } from "../utils/cssGlobalVariables";
 import { themes } from "../redux/UIConfig/UIConfigSlice";
 
@@ -19,7 +19,7 @@ export default function ClientApp(props: { children: ReactNode }) {
 		styleElement.id = "global-variables";
 		styleElement.innerHTML =
 			`:root { \n` +
-			mapPropetiesToCss(tailwindColors, getComputedCssGlobalColors(tailwindColors)) +
+			mapPropertiesToCss(tailwindColors, getComputedCssGlobalColors(tailwindColors)) +
 			`\n}`;
 		document.head.appendChild(styleElement);
 	});

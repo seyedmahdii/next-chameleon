@@ -55,32 +55,36 @@ export function getComputedCssGlobalColors(
 
 	return new TypedMergeable({
 		"body-background-color":
-			variables["body-background-color"] ?? getBrightness(primaryColor) > 110
+			variables["body-background-color"] ??
+			(getBrightness(primaryColor) > 110
 				? adjustColorBrightness(secondaryColor, 45)
-				: adjustColorBrightness(secondaryColor, -35),
+				: adjustColorBrightness(secondaryColor, -35)),
 		"title-color":
-			variables["title-color"] ?? getBrightness(primaryColor) > 110 ? "#121723" : "#FFFFFF",
+			variables["title-color"] ?? (getBrightness(primaryColor) > 110 ? "#121723" : "#FFFFFF"),
 
 		"hero-background-color":
-			variables["hero-background-color"] ?? getBrightness(primaryColor) > 110
+			variables["hero-background-color"] ??
+			(getBrightness(primaryColor) > 110
 				? adjustColorBrightness(secondaryColor, 80)
-				: adjustColorBrightness(secondaryColor, -25),
+				: adjustColorBrightness(secondaryColor, -25)),
 
 		"navbar-background-color-sticky":
-			variables["navbar-background-color-sticky"] ?? getBrightness(primaryColor) > 110
+			variables["navbar-background-color-sticky"] ??
+			(getBrightness(primaryColor) > 110
 				? adjustColorBrightness(secondaryColor, 40)
-				: adjustColorBrightness(secondaryColor, -40),
+				: adjustColorBrightness(secondaryColor, -40)),
 
 		"footer-background-color":
-			variables["footer-background-color"] ?? getBrightness(primaryColor) > 110
+			variables["footer-background-color"] ??
+			(getBrightness(primaryColor) > 110
 				? adjustColorBrightness(secondaryColor, 38)
-				: adjustColorBrightness(secondaryColor, -38),
+				: adjustColorBrightness(secondaryColor, -38)),
 	}).merge((obj) => ({
 		"body-color":
-			variables["body-color"] ?? getContrastColor(obj["title-color"]) === "#000000"
+			variables["body-color"] ??
+			(getContrastColor(obj["title-color"]) === "#000000"
 				? "#959CB1" // for dark themes
-				: "#788293", // for light themes
-
+				: "#788293"), // for light themes
 		// CssHeroGlobalHexColors
 		"hero-svg-circle-primary-color": variables["hero-svg-circle-primary-color"] ?? primaryColor,
 		"hero-svg-circle-secondary-color":
@@ -90,41 +94,41 @@ export function getComputedCssGlobalColors(
 		// CssNavbarGlobalHexColors
 		"navbar-shadow-color-sticky":
 			variables["navbar-shadow-color-sticky"] ??
-			getContrastColor(obj["navbar-background-color-sticky"]) === "#000000"
+			(getContrastColor(obj["navbar-background-color-sticky"]) === "#000000"
 				? "rgba(0, 0, 0, 0.1)"
-				: "rgba(255, 255, 255, 0.1)",
+				: "rgba(255, 255, 255, 0.1)"),
 		"navbar-heading-color":
 			variables["navbar-heading-color"] ??
-			getContrastColor(obj["navbar-background-color-sticky"]) === "#000000"
+			(getContrastColor(obj["navbar-background-color-sticky"]) === "#000000"
 				? adjustColorBrightness(primaryColor, -60)
-				: adjustColorBrightness(primaryColor, 60),
+				: adjustColorBrightness(primaryColor, 60)),
 		"navbar-item-text-color":
 			variables["navbar-item-text-color"] ??
-			getContrastColor(obj["navbar-background-color-sticky"]) === "#000000"
+			(getContrastColor(obj["navbar-background-color-sticky"]) === "#000000"
 				? "#1D2430"
-				: "#FFFFFF",
+				: "#FFFFFF"),
 		"navbar-item-text-active-color":
 			variables["navbar-item-text-active-color"] ??
-			getContrastColor(obj["navbar-background-color-sticky"]) === "#000000"
+			(getContrastColor(obj["navbar-background-color-sticky"]) === "#000000"
 				? primaryColor
-				: "#FFFFFF",
+				: "#FFFFFF"),
 		"navbar-item-text-hover-color":
 			variables["navbar-item-text-hover-color"] ??
-			getContrastColor(obj["navbar-background-color-sticky"]) === "#000000"
+			(getContrastColor(obj["navbar-background-color-sticky"]) === "#000000"
 				? primaryColor
-				: "#FFFFFF",
+				: "#FFFFFF"),
 		"navbar-dropdown_menu-background-color":
 			variables["navbar-dropdown_menu-background-color"] ?? obj["navbar-background-color-sticky"],
 		"navbar-dropdown_menu_item-background-hover-color":
 			variables["navbar-dropdown_menu_item-background-hover-color"] ??
-			getBrightness(primaryColor) > 110
+			(getBrightness(primaryColor) > 110
 				? adjustColorBrightness(secondaryColor, 32)
-				: adjustColorBrightness(primaryColor, -32),
+				: adjustColorBrightness(primaryColor, -32)),
 		"navbar-dropdown_menu-border-color":
 			variables["navbar-dropdown_menu-border-color"] ??
-			getContrastColor(obj["navbar-background-color-sticky"]) === "#000000"
+			(getContrastColor(obj["navbar-background-color-sticky"]) === "#000000"
 				? "rgba(0, 0, 0, 0.1)"
-				: "rgba(255, 255, 255, 0.1)",
+				: "rgba(255, 255, 255, 0.1)"),
 	})).value;
 }
 

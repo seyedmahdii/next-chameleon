@@ -5,7 +5,7 @@ import {
 	getComputedCssGlobalColors,
 } from "../../utils/cssGlobalVariables";
 
-export type Themes = "light" | "dark" | "gold";
+export type Themes = "light" | "dark" | "gold" | "cherryRed";
 
 export const themes: Record<Themes, Partial<ComputedCssGlobalColors> & CssTailwindGlobalHexColors> =
 	{
@@ -20,6 +20,12 @@ export const themes: Record<Themes, Partial<ComputedCssGlobalColors> & CssTailwi
 		gold: {
 			"primary-color": "#e6ac00",
 			"secondary-color": "#fff2cc",
+		},
+		cherryRed: {
+			"primary-color": "#CF0234",
+			"secondary-color": "#feb3c6",
+			"body-color": "#ffe6ec",
+			"navbar-heading-color": "#ffffff",
 		},
 	};
 

@@ -27,6 +27,11 @@ const menuData = [
 				title: "طلایی",
 				onClick: () => changeTheme("gold"),
 			},
+			{
+				id: 24,
+				title: "آلبالویی",
+				onClick: () => changeTheme("cherryRed"),
+			},
 		],
 	},
 ];

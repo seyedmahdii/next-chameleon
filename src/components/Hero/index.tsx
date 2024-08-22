@@ -12,7 +12,7 @@ const Hero = () => {
 						<div className="w-full px-4">
 							<div className="wow fadeInUp mx-auto max-w-[800px] text-center" data-wow-delay=".2s">
 								<h1 className="mb-5 text-3xl font-[800] text-[--title-color] sm:text-4xl md:text-5xl md:leading-tight">
-									در کمتر از ۱۰ دقیقه، تم رنگی بسازید!
+									در کمتر از ۱۰ دقیقه، تم رنگی بساز!
 								</h1>
 								<p className="mb-12 font-thin !leading-relaxed text-[--body-color] sm:text-lg md:text-xl">
 									ما کارهای پیچیده ی راه اندازی و تنظیمات رنگ ها را انجام داده ایم تا شما فقط با
@@ -24,13 +24,14 @@ const Hero = () => {
 										href="/"
 										className="rounded-sm bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
 									>
-										شروع کن
+										دمو
 									</Link>
 									<Link
-										href="/"
+										href="https://github.com/seyedmahdii/multi-theme_system"
 										className="inline-block rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
+										target="_blank"
 									>
-										تم زنده
+										مستندات
 									</Link>
 								</div>
 							</div>

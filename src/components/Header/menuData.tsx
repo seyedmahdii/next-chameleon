@@ -3,23 +3,23 @@ import { changeTheme } from "@/utils/changeTheme";
 const menuData = [
 	{
 		id: 1,
-		title: "Home",
+		title: "خانه",
 		path: "/",
 		newTab: false,
 	},
 	{
 		id: 2,
-		title: "themes",
+		title: "رنگ ها",
 		newTab: false,
 		submenu: [
 			{
 				id: 21,
-				title: "Light",
+				title: "روشن",
 				onClick: () => changeTheme("light"),
 			},
 			{
 				id: 22,
-				title: "Dark",
+				title: "تیره",
 				onClick: () => changeTheme("dark"),
 			},
 		],

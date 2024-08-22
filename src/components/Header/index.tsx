@@ -41,23 +41,25 @@ const Header = () => {
 			>
 				<div className="container">
 					<div className="relative -mx-4 flex items-center justify-between">
-						<div className="max-w-full px-4 me-12">
-							<Link href="/" className={`block w-full ${sticky ? "py-2" : "py-8"} `}>
-								<h3 className="text-[--navbar-heading-color]">رنگارنگ</h3>
-							</Link>
-						</div>
-						<div className="flex w-full items-center justify-between px-4">
+						<Link
+							href="/"
+							className={`${sticky ? "py-2" : "py-4"} px-4 me-12 flex-grow-0 text-3xl font-bold`}
+						>
+							<h3 className="text-[--navbar-heading-color]">آفتاب‌پرست</h3>
+						</Link>
+
+						<div className="flex w-full items-center justify-between px-4 flex-1">
 							<nav
 								id="navbarCollapse"
 								className={`navbar right-0 z-30 rounded border-[.5px] px-6 py-4 duration-300 visible static w-auto border-none !bg-transparent p-0 opacity-100 `}
 							>
-								<ul className="flex gap-6">
+								<ul className="flex gap-10">
 									{menuData.map((menuItem: any, index) => (
-										<li key={index} className="group relative">
+										<li key={index} className="group relative text-xl font-bold">
 											{menuItem.path ? (
 												<Link
 													href={menuItem.path}
-													className={`text-base me-0 inline-flex px-0 py-6 ${
+													className={`me-0 inline-flex px-0 py-6 ${
 														usePathName === menuItem.path
 															? "text-[--navbar-item-text-active-color]"
 															: "text-[--navbar-item-text-color] hover:text-[--navbar-item-text-hover-color]"
@@ -69,7 +71,7 @@ const Header = () => {
 												<>
 													<p
 														onClick={() => handleSubmenu(index)}
-														className="cursor-pointer items-center justify-between text-base text-[--navbar-item-text-color] group-hover:text-[--navbar-item-text-hover-color] me-0 inline-flex px-0 py-6"
+														className="cursor-pointer items-center justify-between text-[--navbar-item-text-color] group-hover:text-[--navbar-item-text-hover-color] me-0 inline-flex px-0 py-6"
 													>
 														{menuItem.title}
 														<span className="ps-1">
@@ -91,7 +93,7 @@ const Header = () => {
 														{menuItem.submenu.map((submenuItem: any, index: any) => (
 															<button
 																key={index}
-																className="block rounded py-2.5 text-sm text-[--navbar-item-text-color] hover:bg-[--navbar-dropdown_menu_item-background-hover-color] px-3 w-full my-1 text-start"
+																className="block rounded py-2.5 text-[--navbar-item-text-color] hover:bg-[--navbar-dropdown_menu_item-background-hover-color] px-3 w-full my-1 text-start text-lg font-bold"
 																onClick={submenuItem.onClick}
 															>
 																{submenuItem.title}

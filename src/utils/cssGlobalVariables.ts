@@ -26,10 +26,8 @@ export type CssNavbarGlobalHexColors = {
 	"navbar-item-text-hover-color": string;
 	"navbar-item-text-active-color": string;
 	"navbar-dropdown_menu-background-color": string;
-	// "navbar-dropdown_menu_item-text-color": string;
 	"navbar-dropdown_menu_item-background-hover-color": string;
-
-	// "navbar-dropdown_menu-border-color": string;
+	"navbar-dropdown_menu-border-color": string;
 };
 
 export type CssHeroGlobalHexColors = {
@@ -52,9 +50,9 @@ export function getComputedCssGlobalColors(
 
 	return new TypedMergeable({
 		"body-background-color":
-			variables["body-background-color"] ?? getContrastColor(primaryColor) === "#000000"
-				? adjustColorBrightness(secondaryColor, -35)
-				: adjustColorBrightness(secondaryColor, 40),
+			variables["body-background-color"] ?? getBrightness(primaryColor) > 110
+				? adjustColorBrightness(secondaryColor, 40)
+				: adjustColorBrightness(secondaryColor, -35),
 		"title-color":
 			variables["title-color"] ?? getBrightness(primaryColor) > 110 ? "#121723" : "#FFFFFF",
 
@@ -112,6 +110,11 @@ export function getComputedCssGlobalColors(
 			getBrightness(primaryColor) > 110
 				? adjustColorBrightness(secondaryColor, 32)
 				: adjustColorBrightness(primaryColor, -32),
+		"navbar-dropdown_menu-border-color":
+			variables["navbar-dropdown_menu-border-color"] ??
+			getContrastColor(obj["navbar-background-color-sticky"]) === "#000000"
+				? "rgba(0, 0, 0, 0.1)"
+				: "rgba(255, 255, 255, 0.1)",
 	})).value;
 }
 

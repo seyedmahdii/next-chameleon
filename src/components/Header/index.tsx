@@ -84,7 +84,7 @@ const Header = () => {
 														</span>
 													</p>
 													<div
-														className={`submenu left-0 rounded-sm bg-[--navbar-dropdown_menu-background-color] transition-[top] duration-300 group-hover:opacity-100 invisible absolute top-[110%] block w-[250px] p-4 opacity-0 shadow-lg group-hover:visible group-hover:top-full ${
+														className={`submenu left-0 rounded-sm border border-[--navbar-dropdown_menu-border-color] bg-[--navbar-dropdown_menu-background-color] transition-[top] duration-300 group-hover:opacity-100 invisible absolute top-[110%] block w-[250px] p-4 opacity-0 shadow-lg group-hover:visible group-hover:top-full ${
 															openIndex === index ? "block" : "hidden"
 														}`}
 													>

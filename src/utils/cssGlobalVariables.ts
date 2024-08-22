@@ -41,6 +41,8 @@ export type ComputedCssGlobalColors = CssBodyGlobalHexColors &
 	CssTextGlobalHexColors &
 	CssNavbarGlobalHexColors &
 	CssHeroGlobalHexColors;
+// &
+// CssFooterGlobalHexColors;
 
 export function getComputedCssGlobalColors(
 	variables: CssTailwindGlobalHexColors & Partial<ComputedCssGlobalColors>

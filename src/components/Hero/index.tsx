@@ -27,7 +27,7 @@ const Hero = () => {
 										شروع کن
 									</Link>
 									<Link
-										href="https://github.com/seyedmahdii/multi-theme_system"
+										href="https://github.com/seyedmahdii/next-chameleon"
 										className="inline-block rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
 										target="_blank"
 									>

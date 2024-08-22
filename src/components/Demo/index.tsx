@@ -1,6 +1,7 @@
 import { useState } from "react";
 import SectionTitle from "../Common/SectionTitle";
 import { changeLiveTheme } from "@/utils/changeTheme";
+import Button from "../Button";
 
 const Demo = () => {
 	const [primaryColor, setPrimaryColor] = useState("#39FE46");
@@ -47,9 +48,9 @@ const Demo = () => {
 							</div>
 						</div>
 						<div className="flex justify-center mt-12">
-							<button onClick={() => changeLiveTheme(primaryColor, secondaryColor)}>
+							<Button variant="fill" onClick={() => changeLiveTheme(primaryColor, secondaryColor)}>
 								اعمال تغییرات
-							</button>
+							</Button>
 						</div>
 					</div>
 				</div>

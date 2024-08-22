@@ -37,6 +37,10 @@ export type CssHeroGlobalHexColors = {
 	"hero-svg-circle-tertiary-color": string;
 };
 
+export type CssButtonGlobalHexColors = {
+	"button-text-color--fill": string;
+};
+
 export type CssFooterGlobalHexColors = {
 	"footer-background-color": string;
 };
@@ -45,7 +49,8 @@ export type ComputedCssGlobalColors = CssBodyGlobalHexColors &
 	CssTextGlobalHexColors &
 	CssNavbarGlobalHexColors &
 	CssHeroGlobalHexColors &
-	CssFooterGlobalHexColors;
+	CssFooterGlobalHexColors &
+	CssButtonGlobalHexColors;
 
 export function getComputedCssGlobalColors(
 	variables: CssTailwindGlobalHexColors & Partial<ComputedCssGlobalColors>
@@ -79,6 +84,8 @@ export function getComputedCssGlobalColors(
 			(getBrightness(primaryColor) > 110
 				? adjustColorBrightness(secondaryColor, 38)
 				: adjustColorBrightness(secondaryColor, -38)),
+		"button-text-color--fill":
+			variables["button-text-color--fill"] ?? getContrastColor(primaryColor),
 	}).merge((obj) => ({
 		"body-color":
 			variables["body-color"] ??

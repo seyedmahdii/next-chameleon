@@ -1,14 +1,28 @@
 "use client";
 
 import "./globals.css";
-import { Inter } from "next/font/google";
+import localFont from "next/font/local";
 import { JSXElementConstructor, ReactElement } from "react";
 import ClientApp from "@/components/ClientApp";
 import store from "@/redux/configureStore";
 import { Provider } from "react-redux";
 import Script from "next/script";
 
-const inter = Inter({ subsets: ["latin"] });
+const iranYekan = localFont({
+	src: [
+		{
+			path: "./fonts/IRANYekanWebRegular.woff",
+			weight: "400",
+			style: "normal",
+		},
+		{
+			path: "./fonts/IRANYekanWebBold.woff",
+			weight: "700",
+			style: "normal",
+		},
+	],
+	variable: "--font-iran-yekan",
+});
 
 export default function RootLayout({
 	children,
@@ -20,7 +34,7 @@ export default function RootLayout({
 	return (
 		<html lang="fa">
 			<head></head>
-			<body className={`bg-[--body-background-color] ${inter.className}`} dir="rtl">
+			<body className={`bg-[--body-background-color] ${iranYekan.className}`} dir="rtl">
 				<Script src="https://cdn.jsdelivr.net/npm/@unocss/runtime"></Script>
 				<Provider store={store}>
 					<ClientApp>{children}</ClientApp>

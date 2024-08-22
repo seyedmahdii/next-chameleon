@@ -11,7 +11,10 @@ const Button = ({ className, variant = "fill", children, ...props }: ButtonProps
 		<button
 			className={`rounded-md px-8 py-4 text-base font-semibold duration-300 ease-in-out hover:bg-primary/80
 				${variant === "fill" && "bg-primary text-[--button-text-color--fill]"}
-				${variant === "outlined" && "bg-[transparent] border border-primary text-[--title-color]"}
+				${
+					variant === "outlined" &&
+					"bg-[transparent] border border-primary text-[--title-color] hover:text-[--button-text-color--fill]"
+				}
 				`}
 			{...props}
 		>

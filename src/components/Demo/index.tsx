@@ -49,7 +49,7 @@ const Demo = () => {
 						</div>
 						<div className="flex justify-center mt-12">
 							<Button variant="fill" onClick={() => changeLiveTheme(primaryColor, secondaryColor)}>
-								اعمال تغییرات
+								اعمال کن <span className="text-xl">🚀</span>
 							</Button>
 						</div>
 					</div>

@@ -5,31 +5,32 @@ const Hero = () => {
 		<>
 			<section
 				id="home"
-				className="relative z-10 overflow-hidden bg-[--hero-background-color] pb-16 pt-[120px] md:pb-[120px] md:pt-[150px] xl:pb-[160px] xl:pt-[180px] 2xl:pb-[200px] 2xl:pt-[210px]"
+				className="relative z-10 overflow-hidden bg-[--hero-background-color] h-[60dvh] xl:h-[75dvh] flex justify-center items-center"
 			>
 				<div className="container">
 					<div className="-mx-4 flex flex-wrap">
 						<div className="w-full px-4">
 							<div className="wow fadeInUp mx-auto max-w-[800px] text-center" data-wow-delay=".2s">
-								<h1 className="mb-5 text-3xl font-bold leading-tight text-[--title-color] sm:text-4xl sm:leading-tight md:text-5xl md:leading-tight">
-									multi theme system
+								<h1 className="mb-5 text-3xl font-[800] text-[--title-color] sm:text-4xl md:text-5xl md:leading-tight">
+									در کمتر از ۱۰ دقیقه، تم رنگی بسازید!
 								</h1>
-								<p className="mb-12 text-base !leading-relaxed text-[--body-color] sm:text-lg md:text-xl">
-									Lorem ipsum dolor sit amet consectetur adipisicing elit. Mollitia placeat cumque
-									aspernatur nemo eaque excepturi, perspiciatis possimus ipsa voluptas ab?
+								<p className="mb-12 font-thin !leading-relaxed text-[--body-color] sm:text-lg md:text-xl">
+									ما کارهای پیچیده ی راه اندازی و تنظیمات رنگ ها را انجام داده ایم تا شما فقط با
+									جداسازی متغییرهای عناصر، وبسایت مولتی تم داشته باشید
+									<span className="text-2xl">😍</span>
 								</p>
 								<div className="flex flex-col items-center justify-center space-y-4 sm:flex-row sm:space-x-4 sm:space-y-0">
 									<Link
 										href="/"
 										className="rounded-sm bg-primary px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-primary/80"
 									>
-										second
+										شروع کن
 									</Link>
 									<Link
 										href="/"
 										className="inline-block rounded-sm bg-black px-8 py-4 text-base font-semibold text-white duration-300 ease-in-out hover:bg-black/90 dark:bg-white/10 dark:text-white dark:hover:bg-white/5"
 									>
-										main
+										گیتهاب
 									</Link>
 								</div>
 							</div>

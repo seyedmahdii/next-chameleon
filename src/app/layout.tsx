@@ -11,6 +11,11 @@ import Script from "next/script";
 const iranYekan = localFont({
 	src: [
 		{
+			path: "./fonts/IRANYekanWebLight.woff",
+			weight: "300",
+			style: "normal",
+		},
+		{
 			path: "./fonts/IRANYekanWebRegular.woff",
 			weight: "400",
 			style: "normal",
@@ -18,6 +23,11 @@ const iranYekan = localFont({
 		{
 			path: "./fonts/IRANYekanWebBold.woff",
 			weight: "700",
+			style: "normal",
+		},
+		{
+			path: "./fonts/IRANYekanWebExtraBold.woff",
+			weight: "800",
 			style: "normal",
 		},
 	],

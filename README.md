@@ -27,7 +27,7 @@ localhost:3000
 ## فایل‌های مهم
 
 1. **/src/utils/cssGlobalVariables.ts**
-   All CSS variables are defined in this file. The list of variables may vary depending on the needs of each project. You can define variables for each part of the site as follows:
+   تمام متغییرهای css در این فایل تعریف می شوند. لیست متغییرها بسته به نیاز هر پروژه متفاوت است. میتواند برای هر قسمت از سایت متغییرها را به صورت زیر تعریف کنید:
 
 ```typescript
 export type CssNavbarGlobalHexColors = {
@@ -43,14 +43,14 @@ export type CssNavbarGlobalHexColors = {
 };
 ```
 
-As you can see, variables have been assigned to all colored parts of the navbar. While naming the variables is up to you, I recommend the following naming convention:
+همانطور که میبینید برای تمامی قسمت های رنگی navbar، متغییر اختصاص داده شده است. با اینکه اسم گذاری متغییرها به شما بستگی دارد، من روش نام گذاری پایین را به شما پیشنهاد میکنم:
 
 ```
 [component]-[slot(s)]-modifier-[property]-[pseudo(s)]-unit
 ```
 
-This note is commented at the beginning of this file as well.
-For other parts of the site, it is also necessary to fully extract their list of variables:
+این نکته در ابتدای همین فایل کامنت شده است.
+برای سایر قسمت های سایت نیز لازم است تا لیست متغییرهایش کامل اسختراج شوند:
 
 ```typescript
 export type ComputedCssGlobalColors = CssBodyGlobalHexColors &
@@ -60,9 +60,9 @@ export type ComputedCssGlobalColors = CssBodyGlobalHexColors &
 	CssFooterGlobalHexColors;
 ```
 
-Next, we move on to the `getComputedCssGlobalColors` function, where you bring color to your website with your creativity. This function is responsible for assigning colors to our variables. Here, we dynamically generate the color values for the variables once for all color themes. However, sometimes we might want to overwrite the variables that are automatically generated. The `variables` parameter is designed for this purpose.
+در ادامه به سراغ تابع `getComputedCssGlobalColors` میرویم. جایی که شما با خلاقیت خود به وبسایتتان رنگ می بخشید. این تابع وظیفه دارد تا کد رنگ ها را به متغییرهایمان اختصاص دهد. ما مقدار رنگ های متغییرها را اینجا یک بار به صورت داینامیک برای تمام تم رنگ ها میسازیم. اما گاهی ممکن است بخواهیم متغییرهایی که بصورت خودکار ساخته شده اند را overwrite کنیم. پارامتر `variables` برای این کار تعبیه شده است.
 
-For this reason, we first set the color value of each variable to `variables["VARIABLE_NAME"]`, and only assign a dynamic color to it if this value does not already exist:
+به همین علت مقدار رنگ هر متغییر را ابتدا `variables["VARIABLE_NAME"]` قرار میدهیم و تنها در صورتی رنگ داینامیک را به ان اساین میکنیم که این مقدار وجود نداشته باشد:
 
 ```typescript
 "body-background-color": variables["body-background-color"] ?? getBrightness(primaryColor) > 110
@@ -70,21 +70,21 @@ For this reason, we first set the color value of each variable to `variables["VA
 	: adjustColorBrightness(secondaryColor, -35)
 ```
 
-Then the color of each variable is determined. For example, for the background color, we used `primaryColor` and used the `getBrightness` utility function to determine whether `primaryColor` is light or dark, and based on that, we set the background color.
+رنگ هر متغییر به صورت مرحله ای تعیین می شود. برای مثال برای رنگ پس زمینه، از `primaryColor` استفاده کردیم و با استفاده از `getBrightness` utility function روشن بودن یا تیره بودن `primaryColor` را تشخیص دادیم و براساس آن رنگ پس زمینه را تعیین کردیم
 
-For ease of working with colors, a set of utility functions has been provided for you:
+برای راحتی در کار با رنگ ها یک سری utility function برای شما تهیه شده است:
 
-a. **`getBrightness` function:** This function takes a color code as input and returns a number. If the number is greater than 125, it means the color is light; otherwise, it is dark.
+a. **تابع `getBrightness`:** این تابع یک کد رنگ را ورودی میگیرد و یک عدد به شما برمیگرداند. اگر این عدد بیشتر از ۱۲۵ بود یعنی رنگ شما یک رنگ روشن و در غیر این صورت تیره است.
 
 b. **`hexToRgb` and `rgbToHex` functions**
 
-c. **`getContrastColor` function:** This function examines the given color and returns its contrasting color.
+c. **`getContrastColor` function:** این تابع رنگ داده داده شده را بررسی میکند و رنگ متضاد آن را برمیگرداند.
 
-d. **`addAlpha` function:** This function adds an alpha value to the given color.
+d. **`addAlpha` function:** مقدار `alpha` به رنگ داده شده اضافه میکند.
 
-e. **`adjustColorBrightness` function:** This function lightens or darkens the given color based on the `percent` parameter.
+e. **`adjustColorBrightness` function:** این تابع رنگ داده شده را براساس پارامتر `percent` تیره تر ویا روشن تر میکند.
 
-Finally, we assign the variables to their corresponding elements:
+در نهایت متغییر ها به عناصر متناظر اختصاص میدهیم:
 
 ```html
 <body className="bg-[--body-background-color]"></body>
